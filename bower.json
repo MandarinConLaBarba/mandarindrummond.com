@@ -1,0 +1,16 @@
+{
+  "name": "boilerplate-rockwell",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "backbone-amd": "~0.9.10",
+    "underscore-amd": "*",
+    "jquery": "*",
+    "requirejs": "*",
+    "mocha": "~1.12.0",
+    "expect": "~0.2.0",
+    "requirejs-text": "~2.0.10",
+    "requirejs-plugins": "~1.0.2",
+    "mustache": "~0.7.2"
+  }
+}

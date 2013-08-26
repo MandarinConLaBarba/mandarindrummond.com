@@ -1,0 +1,5 @@
+node_modules
+.idea
+/assets/scripts/vendor
+/assets/scripts/app/main.built.js
+/generated
