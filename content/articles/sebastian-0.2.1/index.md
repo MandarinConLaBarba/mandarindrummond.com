@@ -1,4 +1,4 @@
-title: "Sebastian - 0.2.1"
+title: Sebastian - 0.2.1
 date: 2013-07-29 7:31
 
 As usual, been busy with life and all its complexities. But I've updated Sebastian some. The main thing is I fixed a major issue w/ context(). You can now

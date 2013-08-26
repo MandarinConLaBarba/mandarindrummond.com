@@ -1,4 +1,4 @@
-title: "Yes, I Prefer (and Defer) Promises..."
+title: Yes, I Prefer (and Defer) Promises...
 date: 2013-02-01 8:31
 
 I like Node.js a lot. In fact I've been working with it almost exclusively for the past twelve months and I'm not sick of it

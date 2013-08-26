@@ -12,6 +12,7 @@
                 "sinon" : "vendor/sinon/sinon",
                 "mustache" : "vendor/mustache/mustache",
                 "underscore" : "vendor/underscore-amd/underscore",
+                "json" : "vendor/requirejs-plugins/src/json",
                 "text" : "vendor/requirejs-text/text",
                 "app/main" : mainPath
             }

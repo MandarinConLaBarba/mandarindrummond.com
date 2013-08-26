@@ -1,4 +1,4 @@
-title: "Sebastian - 0.1.1"
+title: Sebastian - 0.1.1
 date: 2013-02-22 5:31
 
 Been pretty busy lately, but that hasn't stopped me from working a bit here and there on

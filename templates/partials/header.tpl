@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="/css/main.css" />
     </head>
     <body>
+
     <nav class="top-bar">
         <ul class="title-area">
             <li class="name"><h1><a href="/">MandarinDrummond.com</a></h1></li>

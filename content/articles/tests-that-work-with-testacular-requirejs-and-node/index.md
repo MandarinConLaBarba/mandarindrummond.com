@@ -1,4 +1,4 @@
-title: "Testacular+RequireJS+Node Testing"
+title: Testacular+RequireJS+Node Testing
 date: 2013-02-28 8:31
 
 I just switched [Sebastian](http://mandarinconlabarba.github.com/sebastian/) over to the

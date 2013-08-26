@@ -2,17 +2,15 @@
 
 {{> require-setup}}
 
-<div id="contentContainer"></div>
+<div class="row" id="contentContainer">
 
-<script type="text/javascript">
+    <ul class="articleListItemContainer">
+        {{#articles}}
+            <li><a href="/articles/{{key}}/index.html">{{title}} - {{date}}</a></li>
+        {{/articles}}
 
-    define("args", {
-        pageType : "article-archive",
-        collection: {{{articlesJson}}}
-    });
+    </ul>
+</div>
 
-    require(["app/main"]);
-
-</script>
 
 {{> footer}}

@@ -1,4 +1,4 @@
-title: "RequireJS: Shim Configuration - You Must Require!"
+title: RequireJS: Shim Configuration - You Must Require!
 date: 2013-01-23 6:26
 
 [Shim configuration](http://requirejs.org/docs/api.html#config-shim) allows you to integrate your AMD code with traditional

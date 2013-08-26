@@ -2,17 +2,14 @@
 
     {{> require-setup}}
 
-    <div id="contentContainer"></div>
+    <div class="row" id="contentContainer">
+        <h4>{{title}}</h4>
+        <h5>{{date}}</h5>
 
-    <script type="text/javascript">
+        <p>
+            {{{html}}}
+        </p>
 
-        define("args", {
-            pageType : "article",
-            model: {{{json}}}
-        });
-
-        require(["app/main"]);
-
-    </script>
+    </div>
 
     {{> footer}}

@@ -2,17 +2,22 @@
 
     {{> require-setup}}
 
-    <div id="contentContainer"></div>
+    <div class="row" id="contentContainer">
 
-    <script type="text/javascript">
+        {{#articles}}
+            <div>
+                <h4>{{title}}</h4>
+                <h5>{{date}}</h5>
 
-        define("args", {
-            pageType : "index",
-            collection: {{{articlesJson}}}
-        });
+                <p>
+                    {{{html}}}
+                </p>
 
-        require(["app/main"]);
+                <a href="/articles/{{key}}/index.html">permalink</a>
+            </div>
+        {{/articles}}
 
-    </script>
+    </div>
+
 
     {{> footer}}
