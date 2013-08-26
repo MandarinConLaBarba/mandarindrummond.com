@@ -2,12 +2,12 @@ define([
     "jquery",
     "underscore",
     "app/views/base",
-    "app/views/articleListItem",
-    "text!app/templates/articleList.tpl"], function(
+    "app/views/articleArchiveListItem",
+    "text!app/templates/articleArchiveList.tpl"], function(
     $,
     _,
     BaseView,
-    ArticleListItemView,
+    ArticleArchiveListItemView,
     theTemplate) {
 
     return BaseView.extend({
@@ -17,9 +17,8 @@ define([
             this.$el.append(this.renderTemplate(theTemplate));
 
             var self = this;
-
             _.each(this.collection, function(article) {
-                new ArticleListItemView({
+                new ArticleArchiveListItemView({
                     model : article,
                     el : self.$el.find('.articleListItemContainer')
                 }).render();

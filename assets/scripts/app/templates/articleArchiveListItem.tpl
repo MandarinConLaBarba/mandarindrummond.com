@@ -1,0 +1,1 @@
+<li><a href="/articles/{{key}}/index.html">{{title}} - {{date}}</a></li>

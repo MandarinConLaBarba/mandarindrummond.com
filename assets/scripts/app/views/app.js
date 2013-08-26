@@ -3,7 +3,7 @@ define([
     "args",
     "app/views/base",
     "app/views/articleList",
-    "text!app/templates/app.html"], function(
+    "text!app/templates/app.tpl"], function(
     $,
     args,
     BaseView,

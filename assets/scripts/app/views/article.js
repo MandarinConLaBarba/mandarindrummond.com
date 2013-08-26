@@ -2,7 +2,7 @@ define([
     "jquery",
     "underscore",
     "app/views/base",
-    "text!app/templates/article.html"], function(
+    "text!app/templates/article.tpl"], function(
     $,
     _,
     BaseView,
@@ -14,7 +14,7 @@ define([
 
         render : function() {
 
-            this.$el.append(this.renderTemplate(theTemplate));
+            this.$el.append(this.renderTemplate(theTemplate, this.model));
 
         }
 

@@ -2,12 +2,13 @@
 
     {{> require-setup}}
 
-    <div id="articleContainer"></div>
+    <div id="contentContainer"></div>
 
     <script type="text/javascript">
 
         define("args", {
-            article: {{{json}}}
+            pageType : "article",
+            model: {{{json}}}
         });
 
         require(["app/main"]);

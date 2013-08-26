@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 
 
-var generator = require("../lib/generator/index"),
-    deferred = generator.generate();
+var generator = require("../lib/generator/index");
 
-    deferred.fail(function(err) {
-        console.log("Site generation failed: " + err);
-    });
+generator.generate();
+

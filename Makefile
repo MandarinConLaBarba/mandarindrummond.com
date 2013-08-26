@@ -1,5 +1,5 @@
 
-build: npm bower compile
+build: npm bower generate
 
 npm:
 	@npm install
@@ -7,9 +7,12 @@ npm:
 bower:
 	@bower install
 
-compile:
+generate: clean
 	./bin/build
+
+test:
 
 clean:
 	@rm -rf ./generated/*
 
+.PHONY: test
