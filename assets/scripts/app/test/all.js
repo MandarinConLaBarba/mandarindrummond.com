@@ -1,3 +1,0 @@
-define([
-    "specs/views/app"
-]);
