@@ -7,7 +7,10 @@ npm:
 bower:
 	@bower install
 
-generate: clean
+site: clean
+	@./bin/build
+
+md: clean
 	@./bin/build
 
 test:

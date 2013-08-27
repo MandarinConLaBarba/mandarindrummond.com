@@ -2,12 +2,16 @@
 
 
 <div class="row" id="contentContainer">
-    <a href="/" class="back">&lt;&lt; back to index</a>
-    <h4>{{title}}</h4>
+    <a href="/" class="button small back">back to index</a>
+    <div class="panel-article large-12 columns">
+        <div class="large-12 columns">
+            <h4 class="subheader"><a href="/articles/{{key}}/index.html">{{title}}</a></h4>
+        </div>
 
-    <p>
-        {{{html}}}
-    </p>
+        <div class="large-12 columns">
+            {{{html}}}
+        </div>
+    </div>
 
 </div>
 

@@ -1,0 +1,5 @@
+
+.panel-article {
+  @include panel(lighten(#F3E0CA, 5%), 10px);
+  padding-bottom: 0px;
+}
