@@ -16,8 +16,11 @@
         </exec>
     </target>
 
-    <target name="deploy" depends="deploy-pages,deploy-articles,deploy-css">
+    <target name="deploy" depends="deploy-index,deploy-pages,deploy-articles,deploy-css">
 
+    </target>
+
+    <target name="deploy-index">
 
         <scp verbose="true"
              todir="${scp.username}@${scp.host}:~/public_html/mandarindrummond.com/"

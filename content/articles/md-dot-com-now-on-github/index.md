@@ -1,5 +1,5 @@
 title: MandarinDrummond.com source on GitHub
-date: 2013-08-26 12:17
+date: 2013-08-26 11:53
 
 So, the last few days I used a burned some inspiration to write my very own static site generator for
 [MandarinDrummond.com](http://mandarindrummond.com). Not to take anything away from [Wintersmith](http://wintersmith.io/),
