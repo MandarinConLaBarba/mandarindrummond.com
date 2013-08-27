@@ -8,7 +8,7 @@ bower:
 	@bower install
 
 generate: clean
-	./bin/build
+	@./bin/build
 
 test:
 

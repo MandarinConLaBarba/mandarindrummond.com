@@ -1,0 +1,158 @@
+<html>
+<head>
+    <title>Confirmations w/ Promise</title>
+    <link rel="stylesheet" href="/examples/css/foundation.min.css" type="text/css"/>
+</head>
+<body>
+
+
+<script type="text/javascript" src="/examples/scripts/components/requirejs/require.js"></script>
+
+<h1>Open your developer console to see the output...view source to see code.</h1>
+
+<ul>
+    <li><input type="button" class="round button" id="btnExample1" value="Run Conventional Node Example"/> </li>
+    <li><input type="button" class="round button" id="btnExample2" value="Run Nested Deferred Example"/> </li>
+    <li><input type="button" class="round button" id="btnExample3" value="Run Flattened Deferred Example"/> </li>
+    <li><input type="button" class="round button" id="btnExample4" value="Run Flattened Deferred Example 2 (error condition)"/> </li>
+    <li><input type="button" class="round button" id="btnExample5" value="Run Flattened Deferred Example 3 (error condition)"/> </li>
+</ul>
+
+<script type="text/javascript">
+
+    require.config({
+        shim:{
+            "jquery":{
+                exports:"$"
+            }
+        },
+        paths:{
+            "jquery":"/examples/scripts/components/jquery/jquery.min",
+            "backbone":"/examples/scripts/components/backbone-amd/backbone-min",
+            "underscore":"/examples/scripts/components/underscore-amd/underscore-min"
+        }
+    });
+
+    require(["stocks", "underscore"], function (stocks, _) {
+
+        var examples = {
+
+            "one" : function() {
+
+                //traditional node convention, passing callbacks...nested callbacks - Ugh!
+                console.log("Getting the stocks..");
+                stocks.hairy.getStocks(function (err, data) {
+
+                    if (err) {
+                        console.log("Damn, there was an error: ");
+                        console.log(err);
+                        return;
+                    }
+
+
+                    var firstStock = _.first(data);
+
+                    stocks.hairy.getStockDetail(firstStock.symbol, function (err, data) {
+
+                        if (err) {
+                            console.log("Damn, there was an error: ");
+                            console.log(err);
+                            return;
+                        }
+
+                        console.log("Got the stock:");
+                        console.log(data);
+
+                    });
+
+                });
+
+            },
+
+            "two" : function() {
+
+                //fluent, but still nested
+                console.log("Getting the stocks..");
+                $.when(stocks.deferified.getStocks())
+                        .then(function(data) {
+                            $.when(stocks.deferified.getStockDetail(_.first(data).symbol))
+                                    .then(function(data) {
+                                        console.log("Got the stock:");
+                                        console.log(data);
+                                    }).fail(function(err) {
+                                        console.log("An error occurred getting a stock detail");
+                                    })
+                        }).fail(function(err) {
+                            console.log("An error occurred fetching stocks");
+                        });
+
+            },
+
+            "three" : function() {
+                //nicer example using .then() filter
+                console.log("Getting the stocks..");
+                var whenStepOneIsDone = stocks.deferified.getStocks();
+                var whenStepTwoIsDone = whenStepOneIsDone.then(function (data) {
+                    return stocks.deferified.getStockDetail(_.first(data).symbol);
+                });
+
+                whenStepTwoIsDone.then(function(result) {
+                        console.log("Got the stock:");
+                        console.log(result);
+                    }).fail(function(err) {
+                        console.log("failed:");
+                        console.log(err);
+                    });
+
+            },
+            "four" : function() {
+                //Same example as above, proving that failure callback is hit if getStocks() is rejected:
+                console.log("Getting the stocks..");
+                var whenStepOneIsDone = stocks.deferified.getStocks(true);
+                var whenStepTwoIsDone = whenStepOneIsDone.then(function (data) {
+                    var firstStock = _.first(data);
+                    return stocks.deferified.getStockDetail(firstStock.symbol);
+
+                });
+
+                whenStepTwoIsDone.then(function(result) {
+                        console.log("Got the stock:");
+                        console.log(result);
+                    }).fail(function(err) {
+                        console.log("failed:");
+                        console.log(err);
+                    });
+
+            },
+            "five" : function() {
+                //Same example as above, proving that failure callback is hit if getStockDetail() is rejected:
+                console.log("Getting the stocks..");
+                var whenStepOneIsDone = stocks.deferified.getStocks();
+                var whenStepTwoIsDone = whenStepOneIsDone.then(function (data) {
+                    return stocks.deferified.getStockDetail(_.first(data).symbol, true);
+                });
+
+                whenStepTwoIsDone.then(function(result) {
+                        console.log("Got the stock:");
+                        console.log(result);
+                    }).fail(function(err) {
+                        console.log("failed:");
+                        console.log(err);
+                    });
+
+            }
+        };
+
+
+        $('#btnExample1').click(examples.one);
+        $('#btnExample2').click(examples.two);
+        $('#btnExample3').click(examples.three);
+        $('#btnExample4').click(examples.four);
+        $('#btnExample5').click(examples.five);
+
+    });
+
+</script>
+
+</body>
+</html>

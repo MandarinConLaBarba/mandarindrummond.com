@@ -1,0 +1,13 @@
+{
+  "name": "examples",
+  "version": "0.0.0",
+  "dependencies": {
+    "backbone-amd": "~0.9.10",
+    "underscore-amd": "~1.4.3",
+    "requirejs": "~2.1.4",
+    "q": "~0.8.12",
+    "zepto": "latest",
+    "requirejs-text": "~2.0.4",
+    "jquery": "~1.9.0"
+  }
+}

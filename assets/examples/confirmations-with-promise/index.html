@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Confirmations w/ Promise</title>
+        <link rel="stylesheet" href="/examples/css/foundation.min.css" type="text/css" />
+    </head>
+    <body>
+
+        <div id="appContainer"></div>
+
+        <script type="text/javascript" src="/examples/scripts/components/requirejs/require.js"></script>
+
+        <script type="text/javascript">
+
+            require.config({
+                shim : {
+                    "jquery" : {
+                        exports : "$"
+                    }
+                },
+                paths : {
+                    "jquery" : "/examples/scripts/components/zepto/zepto.min", //Backbone-amd just assumes we are dealing w/ jquery and not zepto!
+                    "backbone" : "/examples/scripts/components/backbone-amd/backbone-min",
+                    "underscore" : "/examples/scripts/components/underscore-amd/underscore-min",
+                    "q" : "/examples/scripts/components/q/q.min",
+                    "text" : "/examples/scripts/components/requirejs-text/text"
+                }
+            });
+
+            require(["jquery", "views/app"], function($, AppView) {
+
+                var appView = new AppView({
+                    el : $('body').find('#appContainer')
+                });
+
+                appView.render();
+
+            });
+
+        </script>
+
+    </body>
+</html>

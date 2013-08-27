@@ -1,5 +1,9 @@
+.DS_Store
 node_modules
+build.properties
 .idea
 /assets/scripts/vendor
 /assets/scripts/app/main.built.js
+/assets/examples/scripts/components/
+/assets/examples/route-finder/scripts/components/
 /generated

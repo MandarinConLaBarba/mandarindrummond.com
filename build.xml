@@ -1,0 +1,126 @@
+<project name="mandarindrummond.com Deployment" default="generate" basedir=".">
+
+    <property file="build.properties"/>
+    <property name="projectpaths.base"        value="${basedir}"/>
+    <property name="projectpaths.compiled"    value="generated"/>
+
+    <description>MandarinDrummondDotCom Deployment Script</description>
+
+    <target name="deploy-full" depends="deploy,deploy-examples,deploy-images">
+
+    </target>
+
+    <target name="generate">
+        <exec executable="make">
+            <arg value="build" />
+        </exec>
+    </target>
+
+    <target name="deploy" depends="deploy-pages,deploy-articles,deploy-css">
+
+
+        <scp verbose="true"
+             todir="${scp.username}@${scp.host}:~/public_html/mandarindrummond.com/"
+             keyfile="${scp.key}"
+             trust="true"
+             failonerror="true">
+            <fileset dir="${projectpaths.compiled}/">
+                <include name="index.html"/>
+            </fileset>
+        </scp>
+
+    </target>
+
+    <target name="deploy-css">
+
+        <exec executable="ssh">
+            <arg value="-i"/>
+            <arg value="${scp.key}"/>
+            <arg value="${scp.username}@${scp.host}"/>
+            <arg value="mkdir -p ~/public_html/mandarindrummond.com/css"/>
+        </exec>
+
+        <scp verbose="true"
+             todir="${scp.username}@${scp.host}:~/public_html/mandarindrummond.com/css"
+             keyfile="${scp.key}"
+             trust="true"
+             failonerror="true">
+            <fileset dir="${projectpaths.compiled}/css">
+                <include name="**/*"/>
+            </fileset>
+        </scp>
+
+    </target>
+
+    <target name="deploy-articles">
+        <exec executable="ssh">
+            <arg value="-i"/>
+            <arg value="${scp.key}"/>
+            <arg value="${scp.username}@${scp.host}"/>
+            <arg value="mkdir -p ~/public_html/mandarindrummond.com/articles"/>
+        </exec>
+
+        <scp verbose="true"
+             todir="${scp.username}@${scp.host}:~/public_html/mandarindrummond.com/articles"
+             keyfile="${scp.key}"
+             trust="true"
+             failonerror="true">
+            <fileset dir="${projectpaths.compiled}/articles">
+                <include name="**/*"/>
+            </fileset>
+        </scp>
+
+    </target>
+
+    <target name="deploy-pages">
+
+        <exec executable="ssh">
+            <arg value="-i"/>
+            <arg value="${scp.key}"/>
+            <arg value="${scp.username}@${scp.host}"/>
+            <arg value="mkdir -p ~/public_html/mandarindrummond.com/pages"/>
+        </exec>
+
+        <scp verbose="true"
+             todir="${scp.username}@${scp.host}:~/public_html/mandarindrummond.com/pages"
+             keyfile="${scp.key}"
+             trust="true"
+             failonerror="true">
+            <fileset dir="${projectpaths.compiled}/pages">
+                <include name="**/*"/>
+            </fileset>
+        </scp>
+
+
+    </target>
+
+
+    <target name="deploy-examples">
+
+        <scp verbose="true"
+             todir="${scp.username}@${scp.host}:~/public_html/mandarindrummond.com/examples"
+             keyfile="${scp.key}"
+             trust="true"
+             failonerror="true">
+            <fileset dir="${projectpaths.compiled}">
+                <include name="examples/*"/>
+            </fileset>
+        </scp>
+
+    </target>
+
+    <target name="deploy-images">
+
+        <scp verbose="true"
+             todir="${scp.username}@${scp.host}:~/public_html/mandarindrummond.com/images"
+             keyfile="${scp.key}"
+             trust="true"
+             failonerror="true">
+            <fileset dir="${projectpaths.compiled}">
+                <include name="images/*"/>
+            </fileset>
+        </scp>
+
+    </target>
+
+</project>

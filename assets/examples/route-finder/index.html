@@ -1,0 +1,37 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <title>Route Finder</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="scripts/components/leaflet/dist/leaflet.css"/></head>
+<body>
+
+<script src="scripts/components/require/require.js"></script>
+
+<div id="appContainer" class="deckardApp"></div>
+
+<script type="text/javascript">requirejs.config({
+    baseUrl: "scripts",
+    shim : {
+
+        "leaflet" : {
+            "exports" : "L"
+        }
+    },
+    paths: {
+        "app" :"apps/route-finder",
+        "jquery" : "components/jquery/jquery.min",
+        "text" : "components/require.plugins/text",
+        "underscore" : "components/underscore-amd/underscore",
+        "backbone" : "components/backbone-amd/backbone",
+        "sebastian" : "components/sebastian/sebastian",
+        "leaflet" : "components/leaflet/dist/leaflet-src"
+    }
+
+});
+
+require(["apps/route-finder/main"]);
+
+
+</script></body></html>

@@ -1,0 +1,38 @@
+body {
+  padding: 10px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+    cursor: pointer;
+}
+
+.bordered {
+    box-shadow: 0 0 5px rgba(34, 25, 25, 0.4);
+}
+
+#routeListContainer {
+    width: 200px;
+    float: left;
+    margin-right: 20px;
+    font-size: .7em;
+
+}
+
+#routeListContainer ul {
+    padding-left: 20px;
+}
+
+#mapContainer {
+    height: 600px;
+
+}
+
+.leaflet-control-button {
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    padding: 10px;
+    float: left;
+
+}

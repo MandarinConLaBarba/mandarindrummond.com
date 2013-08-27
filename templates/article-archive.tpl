@@ -1,8 +1,8 @@
 {{> header}}
 
-{{> require-setup}}
-
 <div class="row" id="contentContainer">
+
+    <h4>Past Articles</h4>
 
     <ul class="articleListItemContainer">
         {{#articles}}
