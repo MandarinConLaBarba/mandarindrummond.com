@@ -1,5 +1,5 @@
 
-build: npm bower generate
+build: npm bower site
 
 npm:
 	@npm install

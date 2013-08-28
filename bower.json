@@ -11,6 +11,7 @@
     "expect": "~0.2.0",
     "requirejs-text": "~2.0.10",
     "requirejs-plugins": "~1.0.2",
-    "mustache": "~0.7.2"
+    "mustache": "~0.7.2",
+    "sebastian": "~0.2.5"
   }
 }

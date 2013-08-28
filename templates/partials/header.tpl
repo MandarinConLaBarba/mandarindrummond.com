@@ -2,9 +2,10 @@
     <head>
         <title>{{title}}</title>
         <link rel="stylesheet" href="/css/foundation.min.css" />
-        <link rel="stylesheet" href="/css/main.css" />
     </head>
     <body>
+
+    {{> require-setup}}
 
     <nav class="top-bar">
         <ul class="title-area">
