@@ -2,4 +2,33 @@
 .panel-article {
   @include panel(lighten(#F3E0CA, 5%), 10px);
   padding-bottom: 0px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px #d3d3d3;
+
+}
+
+.top-bar {
+  box-shadow: 0px 1px 1px #000;
+}
+
+ul,ol {
+  margin-left: 30px;
+}
+
+.panel-article pre {
+  border: 1px solid #C1CEDD;
+  border-radius: 3px;
+  background-color: #ECE4DA;
+  padding: 10px;
+
+  code {
+    font-size: .9em;
+    font-weight: normal;
+    color: #474b5c;
+
+  }
+}
+
+body {
+  background-color: #FFF7EF;
 }
