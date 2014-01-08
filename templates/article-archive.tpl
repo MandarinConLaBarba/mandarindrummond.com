@@ -1,6 +1,5 @@
 {{> header}}
 
-<div class="row" id="contentContainer">
 
     <h4>Past Articles</h4>
 
@@ -10,7 +9,6 @@
         {{/articles}}
 
     </ul>
-</div>
 
 
 {{> footer}}

@@ -40,15 +40,15 @@
             <arg value="-i"/>
             <arg value="${scp.key}"/>
             <arg value="${scp.username}@${scp.host}"/>
-            <arg value="mkdir -p ~/public_html/mandarindrummond.com/css"/>
+            <arg value="mkdir -p ~/public_html/mandarindrummond.com/style"/>
         </exec>
 
         <scp verbose="true"
-             todir="${scp.username}@${scp.host}:~/public_html/mandarindrummond.com/css"
+             todir="${scp.username}@${scp.host}:~/public_html/mandarindrummond.com/style"
              keyfile="${scp.key}"
              trust="true"
              failonerror="true">
-            <fileset dir="${projectpaths.compiled}/css">
+            <fileset dir="${projectpaths.compiled}/style">
                 <include name="**/*"/>
             </fileset>
         </scp>
