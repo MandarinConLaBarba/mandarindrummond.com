@@ -1,0 +1,48 @@
+
+
+.main {
+    margin-top: 1%;
+    color: #626262;
+    /*font-size: 4em;*/
+
+}
+
+.main .article {
+    margin-bottom: 5%;
+}
+
+.main .article-end {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.nav-container {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #d3d3d3;
+    padding-bottom: 3px;
+}
+
+
+body {
+    font-family: "Open Sans","Helvetica Neue","Helvetica";
+}
+
+#logoContainer {
+    cursor: pointer;
+}
+
+#logoContainer div {
+    font-weight: 300;
+    /*font-size: 2em;*/
+    text-align: center;
+    border: 1px solid #7a7a7a;
+    box-shadow: 1px 1px 1px #525252;
+    width: 40px;
+    height: 40px;
+    /*margin-top: 10px;*/
+    padding: 1px;
+    position: absolute;
+    overflow: hidden;
+}

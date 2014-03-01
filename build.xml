@@ -16,7 +16,7 @@
         </exec>
     </target>
 
-    <target name="deploy" depends="deploy-index,deploy-pages,deploy-articles,deploy-css">
+    <target name="deploy" depends="deploy-index,deploy-pages,deploy-articles,deploy-css,deploy-scripts">
 
     </target>
 
@@ -49,6 +49,27 @@
              trust="true"
              failonerror="true">
             <fileset dir="${projectpaths.compiled}/style">
+                <include name="**/*"/>
+            </fileset>
+        </scp>
+
+    </target>
+
+    <target name="deploy-scripts">
+
+        <exec executable="ssh">
+            <arg value="-i"/>
+            <arg value="${scp.key}"/>
+            <arg value="${scp.username}@${scp.host}"/>
+            <arg value="mkdir -p ~/public_html/mandarindrummond.com/scripts"/>
+        </exec>
+
+        <scp verbose="true"
+             todir="${scp.username}@${scp.host}:~/public_html/mandarindrummond.com/scripts"
+             keyfile="${scp.key}"
+             trust="true"
+             failonerror="true">
+            <fileset dir="${projectpaths.compiled}/scripts">
                 <include name="**/*"/>
             </fileset>
         </scp>
